@@ -220,7 +220,7 @@ export function insertCiteKeys(keyList: string[]) {
   // insert pandoc citation
   if (editor.document.languageId === "markdown") {
     if (addLocation === null || addLocation === undefined) {
-      insertText("[" + keyList.map((v) => "@" + v).join("; ") + "]")
+      insertText(keyList.map((v) => "@" + v).join("; "))
     } else {
       insertText("; " + keyList.map((v) => "@" + v).join("; "), addLocation - 1)
     }
